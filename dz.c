@@ -34,5 +34,5 @@ void main(){
 		fclose(OUT2);
     } else {
 		printf("error!!!");
-	}
+    }
 }
