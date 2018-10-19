@@ -22,7 +22,6 @@ void main(){
 		size = filesize(fp);
 		for (i = 1; i <= size/2; i++){
 			sym = fgetc(fp);
-			printf("%c", sym);
 			putc(sym, OUT1);
 		}
 		for (i; i <= size; i++){
