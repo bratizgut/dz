@@ -20,19 +20,17 @@ void main(){
 	OUT2 = fopen( "out2.txt", "w" );
     if( (fp != NULL) && (OUT1 != NULL) && (OUT2 != NULL) ){
 		size = filesize(fp);
-		for (i = 1; i <= size/2; i++){
+		for (i = 1; i < size; i++){
 			sym = fgetc(fp);
-			putc(sym, OUT1);
+			if (i <= size / 2){
+				putc(sym, OUT1);
+			}	else	{
+				if (sym != EOF)
+					putc(sym, OUT2);
+			}
 		}
-		for (i; i <= size; i++){
-			sym = getc(fp);
-			if (sym != EOF)
-				putc(sym, OUT2);
-		}
-		fclose(fp);
-		fclose(OUT1);
-		fclose(OUT2);
+		fcloseall;
     } else {
 		printf("error!!!");
-    }
+	}
 }
