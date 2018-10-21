@@ -9,9 +9,7 @@ long int filesize( FILE *fp ){
 }
  
 void main(){
-    FILE *fp;
-	FILE *OUT1;
-	FILE *OUT2;
+    FILE *fp, *OUT1, *OUT2;
 	unsigned long size, i;
 	char sym;
 
