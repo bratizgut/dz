@@ -20,7 +20,7 @@ int main(void){
 	
     if( (fp != NULL) && (OUT1 != NULL) && (OUT2 != NULL) && (RES != NULL) ){
 		size = filesize(fp);
-		for (i = 1; i < size; i++){
+		for (i = 1; i <= size; i++){
 			sym = fgetc(fp);
 			if (i <= size / 2){
 				putc(sym, OUT1);
@@ -30,20 +30,20 @@ int main(void){
 			}
 		}
 		size = filesize(OUT1);
-		for (i = 1; i < size; i++){
+		for (i = 1; i <= size; i++){
 			sym = fgetc(OUT1);
 			if (sym != EOF)
 					putc(sym, RES);
 		}
 		size = filesize(OUT2);
-		for (i = 1; i < size; i++){
+		for (i = 1; i <= size; i++){
 			sym = fgetc(OUT2);
 			if (sym != EOF)
 					putc(sym, RES);
 		}
 		filesize(fp);
 		fseek(RES, 0, SEEK_SET);
-		for (i = 1; i < size; i++){
+		for (i = 1; i <= size; i++){
 			if (fgetc(fp) != fgetc(RES)){
 				printf("Error in result \n");
 				printf("%ld", i);
