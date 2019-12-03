@@ -78,8 +78,8 @@ int main(){
         buf[i] = (float *)malloc(N * sizeof(float));
     matrixZero(&buf, N);
 
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
+    for(size_t i = 0; i < N; i++){
+        for(size_t j = 0; j < N; j++){
             arr[i][j] = (float)rand() / 10000;
             start[i][j] = arr[i][j];
             printf("%6.3f ", arr[i][j]);
@@ -149,8 +149,8 @@ int main(){
     matrixZero(&buf, N);
     matrixMul(&buf, res, start, N);
 
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < N; j++){
+    for(size_t i = 0; i < N; i++){
+        for(size_t j = 0; j < N; j++){
             printf("%6.3f ", buf[i][j]);
         }
         printf("\n");
